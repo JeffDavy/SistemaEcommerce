@@ -1,0 +1,11 @@
+#pesquisa {
+    width: 50vh;
+    position: relative;
+    text-align: center;
+}
+
+#icone {
+    width: 2.5vh;
+    height: 2.5vh;
+    margin: 0px;
+}

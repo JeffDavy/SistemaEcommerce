@@ -1,0 +1,64 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/navbar.ejs') %>
+
+    <div class="container">
+        <hr>
+        <h2>Clientes</h2>
+
+        <form method="POST" action="">
+            <div id="pesquisa" class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Pesquisar</span>
+               </div>
+               <input type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
+            </div>
+        </form>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Razão Social</th>
+                    <th>Contato</th>
+                    <th>Financeiro</th>
+                    <th>Acesso</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <td>Jeferson Davi</td>
+                <td>(11) 98128-6341</td>
+                <td>Regular</td>
+                <td>Liberado</td>
+                <td>Ativo</td>
+                <td>
+                    
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#visualizarCliente"><img id="icone" src="../img/olho.png" alt="Ícone de visualização de informações"></a>
+
+                    <a href="/clientes/editar" class="btn btn-warning" data-toggle="tooltip" data-placement="top" title="Editar informações"><img id="icone" src="../img/editar.png" alt="Ícone de lápis e papel"></a>
+
+                    <form method="POST" action="#" style="display: inline;">
+                        <input type="hidden" name="id" value="VALOR ID">
+                        <button class="btn btn-dark" data-toggle="tooltip" data-placement="top" title="Desbloquear cliente"><img id="icone" src="../img/desbloquear.png" alt="Ícone de reativação"></button>
+                    </form>
+
+                    <form method="POST" action="" style="display: inline;" onsubmit="confirmacaoUsuario(event, this)">
+                        <input type="hidden" name="id" value="VALOR ID">
+                        <button class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Desativar cliente" style="display: inline;"><img id="icone" src="../img/desativar.png" alt="Ícone de desativação"></button>
+                    </form>
+
+                    <form method="POST" action="#" style="display: inline;">
+                        <input type="hidden" name="id" value="VALOR ID">
+                        <button class="btn btn-success" data-toggle="tooltip" data-placement="top" title="Reativar cliente"><img id="icone" src="../img/reativar.png" alt="Ícone de reativação"></button>
+                    </form>
+
+                    
+
+                </td>
+            </tbody>
+        </table>
+
+    </div>
+
+<%- include('../../partials/modal/modalCliente.ejs') %>    
+<%- include('../../partials/footer.ejs') %>
